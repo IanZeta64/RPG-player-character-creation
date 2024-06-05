@@ -1,0 +1,210 @@
+[
+ "RaceDtoRequest", [
+    {
+      "name": "Dragonborn",
+      "attributeType": [
+        "STRENGTH",
+        "CHARISMA"
+      ],
+      "attributeBonus": [
+        2,
+        1
+      ],
+      "raceAbilities": [
+        "Draconic Ancestry: You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type.",
+        "Breath Weapon: You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.",
+        "Damage Resistance: You have resistance to the damage type associated with your draconic ancestry."
+      ]
+    },
+    {
+      "name": "High-Elf",
+      "attributeType": [
+        "DEXTERITY",
+        "INTELLIGENCE"
+      ],
+      "attributeBonus": [
+        2,
+        1
+      ],
+      "raceAbilities": [
+        "Keen Senses: Elves have keen senses, making them vigilant and aware of their surroundings.",
+        "Fey Ancestry: Elves have advantage on saving throws against being charmed, and magic can't put them to sleep.",
+        "Trance: Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day."
+      ]
+    },
+    {
+      "name": "Human",
+      "attributeType": [
+        "DEXTERITY",
+        "CHARISMA"
+      ],
+      "attributeBonus": [
+        1,
+        1
+      ],
+      "raceAbilities": [
+        "Skills: You gain proficiency in one skill of your choice.",
+        "Feat: You gain one feat of your choice."
+      ]
+    },
+    {
+      "name": "Dwarf",
+      "attributeType": [
+        "CONSTITUTION",
+        "WISDOM"
+      ],
+      "attributeBonus": [
+        2,
+        1
+      ],
+      "raceAbilities": [
+        "Darkvision: Accustomed to life underground, you have superior vision in dark and dim conditions.",
+        "Dwarven Resilience: You have advantage on saving throws against poison, and you have resistance against poison damage.",
+        "Dwarven Combat Training: You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.",
+        "Tool Proficiency: You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.",
+        "Stonecunning: Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+        "Dwarven Toughness: Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+      ]
+    }
+  ],
+  "CombatClassDTORequest",[
+    {
+      "caster": "FULL",
+      "name": "Sorcerer Draconic",
+      "savingThrow": [
+        "CONSTITUTION",
+        "CHARISMA"
+      ],
+      "combatClassAbilities": [
+        "Draconic Bloodline: At 1st level, you choose a type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later. This represents your subclass.",
+        "Draconic Resilience: As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. Your hit point maximum increases by 1 and increases by 1 every time you gain a sorcerer level. This represents your subclass.",
+        "Elemental Affinity: Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. This represents your subclass.",
+        "Dragon Wings: At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. This represents your subclass.",
+        "Draconic Presence: Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. This represents your subclass.",
+        "Spellcasting: The sorcerer is a spellcaster who draws on inherent magic from a gift or bloodline. This represents the core class feature.",
+        "Font of Magic: At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points. This represents the core class feature.",
+        "Metamagic: At 3rd level, you gain the ability to twist your spells to suit your needs. This represents the core class feature.",
+        "Sorcerous Restoration: At 20th level, you regain expended sorcery points whenever you finish a short rest. This represents the core class feature."
+      ]
+    },
+    {
+      "caster": "HALF",
+      "name": "Paladin Ancients",
+      "savingThrow": [
+        "WISDOM",
+        "CHARISMA"
+      ],
+      "combatClassAbilities": [
+        "Spellcasting: Paladins of the Ancients carry the spark of the wild within them. They cast their spells not through study or devotion, but through the nature of their being. This represents your subclass.",
+        "Lay on Hands: Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. This represents your subclass.",
+        "Aura of Warding: Beginning at 7th level, ancient paladins are so stalwart against their foes that their allies receive half damage from spells. This represents your subclass.",
+        "Undying Sentinel: Starting at 15th level, when you are reduced to 0 hit points and are not killed outright, you can choose to drop to 1 hit point instead. This represents your subclass.",
+        "Elder Champion: At 20th level, you can assume the form of an ancient force of nature, taking on an appearance you choose. This represents your subclass.",
+        "Divine Sense: The presence of strong evil registers on your senses like a noxious odor. This represents the core class feature.",
+        "Lay on Hands: Your blessed touch can heal wounds. This represents the core class feature.",
+        "Divine Smite: Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon’s damage. This represents the core class feature.",
+        "Divine Health: By 3rd level, the divine magic flowing through you makes you immune to disease. This represents the core class feature."
+      ]
+    },
+    {
+      "caster": "QUARTER",
+      "name": "Rogue Arcane Trickster",
+      "savingThrow": [
+        "DEXTERITY",
+        "INTELLIGENCE"
+      ],
+      "combatClassAbilities": [
+        "Spellcasting: You have learned to augment your martial prowess with the ability to cast spells. This represents your subclass.",
+        "Mage Hand Legerdemain: Starting at 3rd level, when you cast Mage Hand, you can make the spectral hand invisible. This represents your subclass.",
+        "Magical Ambush: Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn. This represents your subclass.",
+        "Versatile Trickster: At 13th level, you gain the ability to distract targets with your Mage Hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. This represents your subclass.",
+        "Spell Thief: At 17th level, you gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster. This represents your subclass.",
+        "Expertise: At 1st level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. This represents the core class feature.",
+        "Sneak Attack: Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal extra damage to one creature you hit with an attack if you have advantage on the attack roll. This represents the core class feature.",
+        "Thieves’ Cant: During your rogue training, you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. This represents the core class feature.",
+        "Uncanny Dodge: Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you. This represents the core class feature."
+      ]
+    },
+    {
+      "caster": "NULL",
+      "name": "Fighter Champion",
+      "savingThrow": [
+        "STRENGTH",
+        "CONSTITUTION"
+      ],
+      "combatClassAbilities": [
+        "Improved Critical: Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20. This represents your subclass.",
+        "Remarkable Athlete: Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus. This represents your subclass.",
+        "Additional Fighting Style: At 10th level, you can choose a second option from the Fighting Style class feature. This represents your subclass.",
+        "Superior Critical: Starting at 15th level, your weapon attacks score a critical hit on a roll of 18–20. This represents your subclass.",
+        "Survivor: At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points. This represents your subclass.",
+        "Fighting Style: You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again. This represents the core class feature.",
+        "Second Wind: You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. This represents the core class feature.",
+        "Action Surge: Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action. This represents the core class feature.",
+        "Martial Archetype: At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques, such as Champion. This represents the core class feature."
+      ]
+    }
+  ],
+  "PlayerCharacterDTORequest",[
+    {
+      "name": "Jax, the Red",
+      "level": 5,
+      "hpDice": 8,
+      "attributesValue": [
+        13,
+        12,
+        15,
+        8,
+        10,
+        17
+      ],
+      "raceId": 1,
+      "combatClassId": 1
+    },
+    {
+      "name": "Eldrin, the Silver Paladin",
+      "level": 7,
+      "hpDice": 10,
+      "attributesValue": [
+        18,
+        12,
+        14,
+        8,
+        8,
+        15
+      ],
+      "raceId": 2,
+      "combatClassId": 2
+    },
+    {
+      "name": "Tobias, the Urchin",
+      "level": 3,
+      "hpDice": 8,
+      "attributesValue": [
+        8,
+        17,
+        10,
+        15,
+        10,
+        15
+      ],
+      "raceId": 3,
+      "combatClassId": 3
+    },
+    {
+      "name": "Baldur, the Brute",
+      "level": 12,
+      "hpDice": 10,
+      "attributesValue": [
+        19,
+        12,
+        17,
+        11,
+        12,
+        9
+      ],
+      "raceId": 4,
+      "combatClassId": 4
+    }
+  ]
+]

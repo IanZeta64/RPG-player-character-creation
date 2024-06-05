@@ -1,0 +1,58 @@
+package br.edu.fatecfranca.projetopoo.rpgcharactercreation.controller.impl;
+
+import br.edu.fatecfranca.projetopoo.rpgcharactercreation.controller.CombatClassController;
+import br.edu.fatecfranca.projetopoo.rpgcharactercreation.model.dto.request.CombatClassDTORequest;
+import br.edu.fatecfranca.projetopoo.rpgcharactercreation.model.dto.response.CombatClassDTOResponse;
+import br.edu.fatecfranca.projetopoo.rpgcharactercreation.service.CombatClassService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.net.URI;
+import java.util.List;
+
+@RestController
+public class CombatClassControllerImpl implements CombatClassController {
+
+  private final CombatClassService service;
+
+  public CombatClassControllerImpl(CombatClassService service) {
+    this.service = service;
+  }
+
+  @Override
+  public ResponseEntity<CombatClassDTOResponse> save(CombatClassDTORequest request) {
+    var response = service.save(request);
+    return ResponseEntity.created(URI.create("/combat-class/" + response.id())).body(response);
+  }
+
+  @Override
+  public ResponseEntity<List<CombatClassDTOResponse>> getAll() {
+    return ResponseEntity.ok(service.getAll());
+  }
+
+  @Override
+  public ResponseEntity<CombatClassDTOResponse> getById(Long id) {
+    return ResponseEntity.ok(service.getById(id));
+  }
+
+  @Override
+  public ResponseEntity<List<CombatClassDTOResponse>> findByName(String name) {
+    return ResponseEntity.ok(service.findByName(name));
+  }
+
+  @Override
+  public ResponseEntity<CombatClassDTOResponse> update(CombatClassDTORequest request, Long id) {
+    return ResponseEntity.accepted().body(service.update(id, request));
+  }
+
+  @Override
+  public ResponseEntity<CombatClassDTOResponse> changeName(Long id, String name) {
+    return ResponseEntity.accepted().body(service.changeName(id, name));
+  }
+
+  @Override
+  public ResponseEntity<Void> delete(Long id) {
+    service.delete(id);
+    return ResponseEntity.noContent().build();
+  }
+}
