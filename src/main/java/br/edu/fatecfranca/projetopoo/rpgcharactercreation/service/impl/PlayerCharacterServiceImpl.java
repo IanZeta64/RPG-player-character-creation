@@ -62,17 +62,17 @@ public class PlayerCharacterServiceImpl implements PlayerCharacterService {
     var entity = characterRepository.findById(UUID.fromString(uuid))
       .orElseThrow(() -> new EntityNotFoundException(PLAYER_CHARACTER, uuid));
 
-    if(!Objects.equals(entity.getRace().getId(), request.raceId())){
+    if (!Objects.equals(entity.getRace().getId(), request.raceId())) {
       entity.setRace(raceRepository.findById(request.raceId())
         .orElseThrow(() -> new EntityNotFoundException(RACE, request.raceId().toString())));
     }
 
-    if(!Objects.equals(entity.getCombatClass().getId(), request.combatClassId())){
+    if (!Objects.equals(entity.getCombatClass().getId(), request.combatClassId())) {
       entity.setCombatClass(combatClassRepository.findById(request.combatClassId())
         .orElseThrow(() -> new EntityNotFoundException(COMBAT_CLASS, request.combatClassId().toString())));
     }
 
-   var entityUpdated = entity.update(request.toEntity(entity.getRace(), entity.getCombatClass()));
+    var entityUpdated = entity.update(request.toEntity(entity.getRace(), entity.getCombatClass()));
     return characterRepository.save(entityUpdated).toResponse();
   }
 
@@ -91,7 +91,7 @@ public class PlayerCharacterServiceImpl implements PlayerCharacterService {
     var oldLevel = entity.getLevel();
     var oldHitPoints = entity.getHitPoints();
     var hpDice = oldHitPoints / oldLevel;
-    entity.setLevel(Math.min(oldLevel+1, MAX_LEVEL));
+    entity.setLevel(Math.min(oldLevel + 1, MAX_LEVEL));
     entity.setHitPoints(hpDice * entity.getLevel());
     return characterRepository.save(entity).toResponse();
   }

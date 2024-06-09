@@ -437,7 +437,7 @@
         }
       }
     },
-    "/race/change/name/{id}": {
+    "/race/{id}/change/name": {
       "patch": {
         "tags": [
           "race-controller-impl"
@@ -476,7 +476,7 @@
         }
       }
     },
-    "/player-character/level-up/{uuid}": {
+    "/player-character/{uuid}/level-up": {
       "patch": {
         "tags": [
           "player-character-controller-impl"
@@ -506,7 +506,7 @@
         }
       }
     },
-    "/player-character/change/race/{uuid}": {
+    "/player-character/{uuid}/change/race/{raceId}": {
       "patch": {
         "tags": [
           "player-character-controller-impl"
@@ -523,7 +523,7 @@
           },
           {
             "name": "raceId",
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
@@ -545,7 +545,7 @@
         }
       }
     },
-    "/player-character/change/name/{uuid}": {
+    "/player-character/{uuid}/change/name": {
       "patch": {
         "tags": [
           "player-character-controller-impl"
@@ -583,7 +583,7 @@
         }
       }
     },
-    "/player-character/change/combat-class/{uuid}": {
+    "/player-character/{uuid}/change/combat-class/{combatClassId}": {
       "patch": {
         "tags": [
           "player-character-controller-impl"
@@ -600,7 +600,7 @@
           },
           {
             "name": "combatClassId",
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
@@ -622,7 +622,7 @@
         }
       }
     },
-    "/player-character/change/bonus/{uuid}": {
+    "/player-character/{uuid}/change/bonus": {
       "patch": {
         "tags": [
           "player-character-controller-impl"
@@ -651,7 +651,7 @@
             "in": "query",
             "required": true,
             "schema": {
-              "maximum": 2,
+              "maximum": 20,
               "minimum": 1,
               "type": "integer",
               "format": "int32"
@@ -672,7 +672,7 @@
         }
       }
     },
-    "/combat-class/change/name/{id}": {
+    "/combat-class/{id}/change/name": {
       "patch": {
         "tags": [
           "combat-class-controller-impl"

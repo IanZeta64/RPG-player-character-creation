@@ -5,7 +5,6 @@ import br.edu.fatecfranca.projetopoo.rpgcharactercreation.model.enums.AttributeE
 import jakarta.persistence.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -51,13 +50,14 @@ public class PlayerCharacterEntity {
     this.combatClass = combatClass;
   }
 
-  public PlayerCharacterDTOResponse toResponse(){
+  public PlayerCharacterDTOResponse toResponse() {
     sumRaceAttributes();
-    return new PlayerCharacterDTOResponse(this.id.toString(), this.name, this.level,this.hitPoints, this.proficiencyBonus,
+    return new PlayerCharacterDTOResponse(this.id.toString(), this.name, this.level, this.hitPoints, this.proficiencyBonus,
       getMapOfAttributes(this.attributes), getMapOfAttributeModifier(this.attributes),
       this.race.toResponse(), this.combatClass.toResponse());
   }
-  public PlayerCharacterEntity update(PlayerCharacterEntity playerCharacter){
+
+  public PlayerCharacterEntity update(PlayerCharacterEntity playerCharacter) {
     this.name = playerCharacter.getName();
     this.level = playerCharacter.getLevel();
     this.hitPoints = playerCharacter.getHitPoints();
@@ -67,6 +67,7 @@ public class PlayerCharacterEntity {
     this.combatClass = playerCharacter.getCombatClass();
     return this;
   }
+
   public UUID getId() {
     return id;
   }
@@ -128,8 +129,8 @@ public class PlayerCharacterEntity {
     this.combatClass = combatClass;
   }
 
-  public void sumRaceAttributes(){
+  public void sumRaceAttributes() {
     this.race.getBonus().forEach((key, value) ->
-      this.attributes.put(key, value+this.attributes.get(key)));
+      this.attributes.put(key, value + this.attributes.get(key)));
   }
 }

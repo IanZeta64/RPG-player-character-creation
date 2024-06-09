@@ -25,7 +25,7 @@ public interface CombatClassController {
   @PutMapping("/{id}")
   ResponseEntity<CombatClassDTOResponse> update(@Validated @RequestBody CombatClassDTORequest request, @PathVariable Long id);
 
-  @PatchMapping("/change/name/{id}")
+  @PatchMapping("{id}/change/name")
   ResponseEntity<CombatClassDTOResponse> changeName(@PathVariable Long id, @RequestParam String name);
 
   @DeleteMapping("/{id}")

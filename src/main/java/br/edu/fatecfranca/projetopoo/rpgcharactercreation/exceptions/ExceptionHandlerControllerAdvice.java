@@ -27,16 +27,18 @@ public class ExceptionHandlerControllerAdvice extends ResponseEntityExceptionHan
     ErrorResponse errorResponse = new ErrorResponse(httpStatus.value(), httpStatus.getReasonPhrase(), List.of(ex.getMessage()));
     return new ResponseEntity<>(errorResponse, httpStatus);
   }
+
   @ExceptionHandler(EntityDuplicatedException.class)
   protected ResponseEntity<Object> handleEntityDuplicatedException(EntityDuplicatedException ex) {
     var httpStatus = ex.getStatus();
     ErrorResponse errorResponse = new ErrorResponse(httpStatus.value(), httpStatus.getReasonPhrase(), List.of(ex.getMessage()));
     return new ResponseEntity<>(errorResponse, httpStatus);
   }
+
   @ExceptionHandler(IllegalArgumentException.class)
   protected ResponseEntity<Object> handleInvalidUUID(IllegalArgumentException ex, WebRequest request) {
     HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
-    ErrorResponse errorResponse = new ErrorResponse(httpStatus.value(), httpStatus.getReasonPhrase(),  List.of(ex.getMessage()));
+    ErrorResponse errorResponse = new ErrorResponse(httpStatus.value(), httpStatus.getReasonPhrase(), List.of(ex.getMessage()));
     return handleExceptionInternal(ex, errorResponse, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
   }
 
@@ -58,6 +60,7 @@ public class ExceptionHandlerControllerAdvice extends ResponseEntityExceptionHan
       errorMessages.add(getMethodArgumentNotValidErrorMessage(error)));
     return errorMessages;
   }
+
   private String getMethodArgumentNotValidErrorMessage(FieldError error) {
     return String.format(METHOD_ARGUMENT_NOT_VALID_ERROR_MESSAGE, error.getField(), error.getDefaultMessage());
   }
