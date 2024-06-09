@@ -27,13 +27,13 @@ public record PlayerCharacterDTORequest(
   @Size(min = 6, max = 6, message = "Attribute value must have exactly 6 elements")
   List<@Min(value = 1, message = "Attribute value must be at least 1")
   @Max(value = 20, message = "Attribute value must be at most 20")
-  Integer> attributesValue,
+    Integer> attributesValue,
   Long raceId,
   Long combatClassId) {
-  public PlayerCharacterEntity toEntity(RaceEntity race, CombatClassEntity combatClass){
+  public PlayerCharacterEntity toEntity(RaceEntity race, CombatClassEntity combatClass) {
     var calculatedHp = this.level *
-        (this.hpDice + ATTRIBUTE_MODIFIER_MAP.get(this.attributesValue.get(0))
-          + Optional.ofNullable(race.getBonus().get(AttributeEnum.CONSTITUTION)).orElse(0));
+      (this.hpDice + ATTRIBUTE_MODIFIER_MAP.get(this.attributesValue.get(0))
+        + Optional.ofNullable(race.getBonus().get(AttributeEnum.CONSTITUTION)).orElse(0));
     var proficiencyBonus = PROFICIENCY_VALUE_MAP.get(level);
     var mapAttributesValues = zipToMap(ATTRIBUTES_TYPES, this.attributesValue);
     return new PlayerCharacterEntity(

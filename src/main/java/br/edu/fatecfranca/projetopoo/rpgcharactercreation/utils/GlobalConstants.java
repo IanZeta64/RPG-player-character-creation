@@ -35,6 +35,6 @@ public class GlobalConstants {
     Map.entry(14, 2), Map.entry(15, 2),
     Map.entry(16, 3), Map.entry(17, 3),
     Map.entry(18, 4), Map.entry(19, 4),
-    Map.entry(20, 5)
+    Map.entry(20, 5), Map.entry(21, 5)
   );
 }

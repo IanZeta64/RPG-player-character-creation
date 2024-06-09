@@ -21,7 +21,7 @@ public class RaceControllerImpl implements RaceController {
   @Override
   public ResponseEntity<RaceDTOResponse> save(RaceDTORequest request) {
     var response = service.save(request);
-    return ResponseEntity.created(URI.create("/race/" +response.id())).body(response);
+    return ResponseEntity.created(URI.create("/race/" + response.id())).body(response);
   }
 
   @Override

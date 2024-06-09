@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: CharacterCreation
+  server:
+    port: 8080
+  datasource:
+    url: jdbc:postgresql://localhost:5432/CharacterCreation
+    username: postgres
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+hibernate:
+  temp:
+    use_jdbc_metadata_defaults: false
